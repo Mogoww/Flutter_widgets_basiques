@@ -35,7 +35,17 @@ class BasicsPage extends StatelessWidget {
         width: size.width,
         color: Colors.teal,
         // margin: EdgeInsets.all(10),
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.only(top: 150),
+        child: Text(
+          'Salut!',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 40,
+            fontWeight: FontWeight.w200,
+            fontStyle: FontStyle.italic,
+          ),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
