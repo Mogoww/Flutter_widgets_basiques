@@ -45,7 +45,6 @@ class BasicsPage extends StatelessWidget {
               onPressed: () {},
             ),
           ],
-
           centerTitle: true,
           elevation: 7.5,
         ),
@@ -66,12 +65,22 @@ class BasicsPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text("data"),
-                      imageFromAsset("images/pexels-feyza-yıldırım-18177110.jpg", size),
-                      spanText(),
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        color: Colors.red,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            imageFromAsset(height: 100, width: 100),
+                            simpleText("text"),
+                          ],
+                        ),
+                      ),
+                      imageFromNetwork(),
                     ],
                   ),
                 ),
-
                 color: Colors.blue,
                 margin: EdgeInsets.all(10),
               ),
@@ -105,7 +114,7 @@ class BasicsPage extends StatelessWidget {
           ),
           children: [
             TextSpan(
-              text: ' World',
+              text: ' WorldWorld',
               style: TextStyle(
                 color: Colors.red,
                 fontSize: 40,
@@ -127,21 +136,19 @@ class BasicsPage extends StatelessWidget {
   }
 
   // Fct image from network
-  Image imageFromNetwork(String url) {
+  Image imageFromNetwork() {
     return Image.network(
-      url,
-      height: 150,
-      width: 150,
-      fit: BoxFit.cover,
+      "https://images.pexels.com/photos/18278210/pexels-photo-18278210.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+      height: 200,
     );
   }
 
   // Fct image from asset
-  Image imageFromAsset(String url, Size size) {
+  Image imageFromAsset({required double height, required double width}) {
     return Image.asset(
-      url,
-      height: 150,
-      width: size.width,
+      "images/pexels-feyza-yıldırım-18177110.jpg",
+      height: height,
+      width: width,
       fit: BoxFit.cover,
     );
   }
