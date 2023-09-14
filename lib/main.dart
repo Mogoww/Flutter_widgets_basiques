@@ -25,20 +25,45 @@ class BasicsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    var platform = Theme.of(context).platform;
+    var size = MediaQuery
+        .of(context)
+        .size;
+    var platform = Theme
+        .of(context)
+        .platform;
     print('size: $size');
     print('platform: $platform');
     return Scaffold(
-      body: Container(
-        height: size.height,
-        width: size.width,
-        color: Colors.teal,
-        // margin: EdgeInsets.all(10),
-        padding: EdgeInsets.only(top: 150),
-        child: const Text.rich(
-          TextSpan(
-            text: 'Hello',
+        body: Container(
+            height: size.height,
+            width: size.width,
+            color: Colors.teal,
+            // margin: EdgeInsets.all(10),
+            padding: EdgeInsets.only(top: 150),
+            child: spanText(),
+        )
+    );
+  }
+
+  // Function qui retourne un widget Text
+  Text simpleText(String text) {
+    return Text(
+      text,
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 40,
+        fontWeight: FontWeight.w200,
+        fontStyle: FontStyle.italic,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+
+  // Function qui retourne un widget TextSpan
+  Text spanText() {
+    return const Text.rich(
+        TextSpan(
+            text: 'Hello ',
             style: TextStyle(
               color: Colors.white,
               fontSize: 40,
@@ -65,24 +90,7 @@ class BasicsPage extends StatelessWidget {
                 ),
               ),
             ]
-          ),
-
-        )
-      ),
-    );
-  }
-
-  // Function qui retourne un widget Text
-  Text simpleText(String text) {
-    return Text(
-      text,
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 40,
-        fontWeight: FontWeight.w200,
-        fontStyle: FontStyle.italic,
-      ),
-      textAlign: TextAlign.center,
+        ),
     );
   }
 }
