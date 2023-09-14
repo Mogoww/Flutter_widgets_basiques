@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
       home: BasicsPage(),
@@ -22,15 +21,10 @@ class MyApp extends StatelessWidget {
 }
 
 class BasicsPage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery
-        .of(context)
-        .size;
-    var platform = Theme
-        .of(context)
-        .platform;
+    var size = MediaQuery.of(context).size;
+    var platform = Theme.of(context).platform;
     print('size: $size');
     print('platform: $platform');
     return Scaffold(
@@ -40,15 +34,15 @@ class BasicsPage extends StatelessWidget {
             color: Colors.teal,
             // margin: EdgeInsets.all(10),
             // padding: EdgeInsets.only(top: 150),
-            child:  Center(
-              child: Icon(
-                Icons.access_alarm,
-                size: size.width / 2,
-                color: Colors.white,
-              )
+            child: Center(
+                child:
+                Image.network(
+              "https://images.pexels.com/photos/18278210/pexels-photo-18278210.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+              height: 150,
+              width: size.width,
+              fit: BoxFit.cover,
             )
-        )
-    );
+            )));
   }
 
   // Function qui retourne un widget Text
@@ -68,35 +62,34 @@ class BasicsPage extends StatelessWidget {
   // Function qui retourne un widget TextSpan
   Text spanText() {
     return const Text.rich(
-        TextSpan(
-            text: 'Hello ',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 40,
-              fontWeight: FontWeight.w200,
-              fontStyle: FontStyle.italic,
+      TextSpan(
+          text: 'Hello ',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 40,
+            fontWeight: FontWeight.w200,
+            fontStyle: FontStyle.italic,
+          ),
+          children: [
+            TextSpan(
+              text: ' World',
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 40,
+                fontWeight: FontWeight.w200,
+                fontStyle: FontStyle.italic,
+              ),
             ),
-            children: [
-              TextSpan(
-                text: ' World',
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 40,
-                  fontWeight: FontWeight.w200,
-                  fontStyle: FontStyle.italic,
-                ),
+            TextSpan(
+              text: ' !',
+              style: TextStyle(
+                color: Colors.blue,
+                fontSize: 40,
+                fontWeight: FontWeight.w200,
+                fontStyle: FontStyle.italic,
               ),
-              TextSpan(
-                text: ' !',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 40,
-                  fontWeight: FontWeight.w200,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-            ]
-        ),
+            ),
+          ]),
     );
   }
 }
