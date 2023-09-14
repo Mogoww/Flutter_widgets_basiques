@@ -35,8 +35,13 @@ class BasicsPage extends StatelessWidget {
             // margin: EdgeInsets.all(10),
             // padding: EdgeInsets.only(top: 150),
             child: Center(
-                child: imageFromAsset(
-                    'images/pexels-feyza-yıldırım-18177110.jpg', size))));
+              child: Card(
+                elevation: 10,
+                child: imageFromAsset("images/pexels-feyza-yıldırım-18177110.jpg", size),
+                color: Colors.blue,
+                margin: EdgeInsets.all(10),
+              ),
+            )));
   }
 
   // Function qui retourne un widget Text
