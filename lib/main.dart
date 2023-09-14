@@ -35,8 +35,8 @@ class BasicsPage extends StatelessWidget {
             // margin: EdgeInsets.all(10),
             // padding: EdgeInsets.only(top: 150),
             child: Center(
-                child: imageFromAsset('images/pexels-feyza-yıldırım-18177110.jpg', size)
-            )));
+                child: imageFromAsset(
+                    'images/pexels-feyza-yıldırım-18177110.jpg', size))));
   }
 
   // Function qui retourne un widget Text
@@ -106,5 +106,4 @@ class BasicsPage extends StatelessWidget {
       fit: BoxFit.cover,
     );
   }
-
 }
