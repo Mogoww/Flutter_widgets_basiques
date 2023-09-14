@@ -39,8 +39,10 @@ class BasicsPage extends StatelessWidget {
             width: size.width,
             color: Colors.teal,
             // margin: EdgeInsets.all(10),
-            padding: EdgeInsets.only(top: 150),
-            child: spanText(),
+            // padding: EdgeInsets.only(top: 150),
+            child: Center(
+              child: spanText(),
+            )
         )
     );
   }
