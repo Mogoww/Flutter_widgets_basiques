@@ -35,7 +35,7 @@ class BasicsPage extends StatelessWidget {
             // margin: EdgeInsets.all(10),
             // padding: EdgeInsets.only(top: 150),
             child: Center(
-                child: imageFromAsset('images/pexels-feyza-yıldırım-18177110.jpg')
+                child: imageFromAsset('images/pexels-feyza-yıldırım-18177110.jpg', size)
             )));
   }
 
@@ -98,11 +98,11 @@ class BasicsPage extends StatelessWidget {
   }
 
   // Fct image from asset
-  Image imageFromAsset(String url) {
+  Image imageFromAsset(String url, Size size) {
     return Image.asset(
       url,
       height: 150,
-      width: 150,
+      width: size.width,
       fit: BoxFit.cover,
     );
   }
