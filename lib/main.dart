@@ -11,9 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: BasicsPage(),
     );
@@ -28,6 +29,26 @@ class BasicsPage extends StatelessWidget {
     print('size: $size');
     print('platform: $platform');
     return Scaffold(
+        appBar: AppBar(
+          title: const Text('Basics'),
+          leading: IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {},
+          ),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(Icons.more_vert),
+              onPressed: () {},
+            ),
+          ],
+
+          centerTitle: true,
+          elevation: 7.5,
+        ),
         body: Container(
             height: size.height,
             width: size.width,
@@ -39,7 +60,7 @@ class BasicsPage extends StatelessWidget {
                 elevation: 10,
                 // child: imageFromAsset("images/pexels-feyza-yıldırım-18177110.jpg", size),
                 child: Padding(
-                  padding:  EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: imageFromAsset(
                       "images/pexels-feyza-yıldırım-18177110.jpg", size),
                 ),
