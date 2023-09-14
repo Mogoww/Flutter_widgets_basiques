@@ -35,13 +35,7 @@ class BasicsPage extends StatelessWidget {
             // margin: EdgeInsets.all(10),
             // padding: EdgeInsets.only(top: 150),
             child: Center(
-                child:
-                Image.network(
-              "https://images.pexels.com/photos/18278210/pexels-photo-18278210.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
-              height: 150,
-              width: size.width,
-              fit: BoxFit.cover,
-            )
+                child: imageFromAsset('images/pexels-feyza-yıldırım-18177110.jpg')
             )));
   }
 
@@ -92,4 +86,25 @@ class BasicsPage extends StatelessWidget {
           ]),
     );
   }
+
+  // Fct image from network
+  Image imageFromNetwork(String url) {
+    return Image.network(
+      url,
+      height: 150,
+      width: 150,
+      fit: BoxFit.cover,
+    );
+  }
+
+  // Fct image from asset
+  Image imageFromAsset(String url) {
+    return Image.asset(
+      url,
+      height: 150,
+      width: 150,
+      fit: BoxFit.cover,
+    );
+  }
+
 }
