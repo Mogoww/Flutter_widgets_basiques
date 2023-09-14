@@ -36,24 +36,15 @@ class BasicsPage extends StatelessWidget {
         color: Colors.teal,
         // margin: EdgeInsets.all(10),
         padding: EdgeInsets.only(top: 150),
-        child: Text(
-          'Salut les gens',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 40,
-            fontWeight: FontWeight.w200,
-            fontStyle: FontStyle.italic,
-          ),
-          textAlign: TextAlign.center,
-        ),
+        child: simpleText('Hello World'),
       ),
     );
   }
 
   // Function qui retourne un widget Text
-  Text simpleText() {
+  Text simpleText(String text) {
     return Text(
-      'Salut les gens',
+      text,
       style: TextStyle(
         color: Colors.white,
         fontSize: 40,
