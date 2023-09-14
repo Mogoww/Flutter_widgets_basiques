@@ -41,7 +41,14 @@ class BasicsPage extends StatelessWidget {
             // margin: EdgeInsets.all(10),
             // padding: EdgeInsets.only(top: 150),
             child: Center(
-              child: spanText(),
+              child: Container(
+                height: 200,
+                width: 200,
+                color: Colors.red,
+                child: Center(
+                  child: simpleText("text")
+                ),
+              )
             )
         )
     );
