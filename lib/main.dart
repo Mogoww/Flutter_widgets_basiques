@@ -37,7 +37,12 @@ class BasicsPage extends StatelessWidget {
             child: Center(
               child: Card(
                 elevation: 10,
-                child: imageFromAsset("images/pexels-feyza-yıldırım-18177110.jpg", size),
+                // child: imageFromAsset("images/pexels-feyza-yıldırım-18177110.jpg", size),
+                child: Padding(
+                  padding:  EdgeInsets.all(8.0),
+                  child: imageFromAsset(
+                      "images/pexels-feyza-yıldırım-18177110.jpg", size),
+                ),
                 color: Colors.blue,
                 margin: EdgeInsets.all(10),
               ),
