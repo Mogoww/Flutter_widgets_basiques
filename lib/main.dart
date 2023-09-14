@@ -40,14 +40,11 @@ class BasicsPage extends StatelessWidget {
             color: Colors.teal,
             // margin: EdgeInsets.all(10),
             // padding: EdgeInsets.only(top: 150),
-            child: Center(
-              child: Container(
-                height: 200,
-                width: 200,
-                color: Colors.red,
-                child: Center(
-                  child: simpleText("text")
-                ),
+            child:  Center(
+              child: Icon(
+                Icons.access_alarm,
+                size: size.width / 2,
+                color: Colors.white,
               )
             )
         )
