@@ -73,7 +73,9 @@ class BasicsPage extends StatelessWidget {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             imageFromAsset(height: 100, width: 100),
-                            simpleText("text"),
+                            Expanded(
+                                child: simpleText("text"),
+                            ),
                           ],
                         ),
                       ),
