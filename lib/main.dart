@@ -65,6 +65,17 @@ class BasicsPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text("data"),
+                      Stack(
+                        alignment: Alignment.topCenter,
+                        children: [
+                          imageFromAsset(height: 200, width: size.width),
+                          Padding(
+                              padding: EdgeInsets.only(top: 150),
+                              child: profilePicture(radius: 50)
+                          ),
+                          Text("Name"),
+                        ],
+                      ),
                       Container(
                         padding: EdgeInsets.all(5),
                         color: Colors.red,
@@ -72,11 +83,7 @@ class BasicsPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            CircleAvatar(
-                              radius: 80,
-                              backgroundColor: Colors.white,
-                              foregroundImage: imageFromAsset(height: 100, width: 100).image,
-                            ),
+                            profilePicture(),
                             // imageFromAsset(height: 100, width: 100),
                             Expanded(
                                 child: simpleText("text"),
@@ -92,6 +99,14 @@ class BasicsPage extends StatelessWidget {
                 margin: EdgeInsets.all(10),
               ),
             )));
+  }
+
+
+  CircleAvatar profilePicture({ double radius = 50 }) {
+    return CircleAvatar(
+      backgroundImage: AssetImage("images/pexels-feyza-yıldırım-18177110.jpg"),
+      radius: radius,
+    );
   }
 
   // Function qui retourne un widget Text
