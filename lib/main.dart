@@ -59,54 +59,61 @@ class BasicsPage extends StatelessWidget {
                 elevation: 10,
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text("data"),
-                      Stack(
-                        alignment: Alignment.topCenter,
-                        children: [
-                          imageFromAsset(height: 200, width: size.width),
-                          Padding(
-                              padding: EdgeInsets.only(top: 150),
-                              child: profilePicture(radius: 50)
-                          ),
-                          Row(
-                            children: [
-                              Icon(Icons.star, color: Colors.red),
-                              Icon(Icons.star, color: Colors.red),
-                              Spacer(),
-                              Text("Name"),
-                            ],
-                          )
-                        ],
-                      ),
-                      Divider(
-                        color: Colors.black,
-                        height: 10,
-                        thickness: 1,
-                        indent: 20,
-                        endIndent: 20,
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(5),
-                        color: Colors.red,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          mainAxisSize: MainAxisSize.max,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text("data"),
+                        Stack(
+                          alignment: Alignment.topCenter,
                           children: [
-                            profilePicture(),
-                            // imageFromAsset(height: 100, width: 100),
-                            Expanded(
-                                child: simpleText("text"),
+                            imageFromAsset(height: 200, width: size.width),
+                            Padding(
+                                padding: EdgeInsets.only(top: 150),
+                                child: profilePicture(radius: 50)
                             ),
+                            Row(
+                              children: [
+                                Icon(Icons.star, color: Colors.red),
+                                Icon(Icons.star, color: Colors.red),
+                                Spacer(),
+                                Text("Name"),
+                              ],
+                            )
                           ],
                         ),
-                      ),
-                      imageFromNetwork(),
-                    ],
+                        Divider(
+                          color: Colors.black,
+                          height: 10,
+                          thickness: 1,
+                          indent: 20,
+                          endIndent: 20,
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(5),
+                          color: Colors.red,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              profilePicture(),
+                              // imageFromAsset(height: 100, width: 100),
+                              Expanded(
+                                child: simpleText("text"),
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        imageFromNetwork(),
+                        imageFromNetwork(),
+                        imageFromNetwork(),
+                        imageFromNetwork(),
+                      ],
+                    ),
                   ),
                 ),
                 color: Colors.blue,
