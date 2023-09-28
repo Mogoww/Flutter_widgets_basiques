@@ -72,7 +72,12 @@ class BasicsPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            imageFromAsset(height: 100, width: 100),
+                            CircleAvatar(
+                              radius: 80,
+                              backgroundColor: Colors.white,
+                              foregroundImage: imageFromAsset(height: 100, width: 100).image,
+                            ),
+                            // imageFromAsset(height: 100, width: 100),
                             Expanded(
                                 child: simpleText("text"),
                             ),
