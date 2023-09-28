@@ -73,7 +73,14 @@ class BasicsPage extends StatelessWidget {
                               padding: EdgeInsets.only(top: 150),
                               child: profilePicture(radius: 50)
                           ),
-                          Text("Name"),
+                          Row(
+                            children: [
+                              Icon(Icons.star, color: Colors.red),
+                              Icon(Icons.star, color: Colors.red),
+                              Spacer(),
+                              Text("Name"),
+                            ],
+                          )
                         ],
                       ),
                       Divider(
